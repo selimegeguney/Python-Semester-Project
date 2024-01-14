@@ -2,8 +2,11 @@ answer = "WORD"
 guess = "_ " * len(answer)
 print(guess)
 lives = 5
-contained = False
-def check_letter(answer, guess):
+
+def check_letter(answer, lives):
+    contained = False
+    global guess
+
     letter = str(input("Guess a letter: ")).upper()
     for i in range(len(answer)):
         if answer[i] == letter:
@@ -19,7 +22,8 @@ def check_letter(answer, guess):
     print(guess)
 
 while lives > 0:
-    check_letter(answer, guess)
-    if guess == answer:
+    if guess.replace(" ", "") != answer:
+        check_letter(answer, lives)
+    else:
         print("You win!")
         exit()
