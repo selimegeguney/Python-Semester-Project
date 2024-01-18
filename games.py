@@ -61,7 +61,7 @@ def guess_letter(answer):
 
 while lives > 0:
     if guess.replace(" ", "") != answer:
-        print(guess_letter(answer), "FAILS: ", ', '.join(wrong_chars))  
+        print(question, "\n", guess_letter(answer), "FAILS: ", ', '.join(wrong_chars))  
     else:
         print("***** You Win! *****")
         break
