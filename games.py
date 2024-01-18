@@ -4,7 +4,6 @@ from openai import OpenAI
 
 load_dotenv()
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
-print(OPENAI_API_KEY)
 
 client = OpenAI(api_key=f"{OPENAI_API_KEY}")
 
@@ -54,8 +53,7 @@ def guess_letter(answer):
     else:
         lives -= 1
         if lives > 0:
-            if letter not in wrong_chars: 
-                wrong_chars.append(letter)
+            wrong_chars.append(letter)    
             return(f"----- WRONG! {lives} LIVES LEFT! -----\n {guess}")
         elif lives == 0:
             return(f"***** You Lost! *****\n\n The word was => {answer}\n")
