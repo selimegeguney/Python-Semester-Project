@@ -7,7 +7,7 @@ This is a word guessing game. You have 5 lives try to find out all the letters i
 * ~~Character limit to guess~~
 * ~~Lives doesnt go down~~
 * wrong character list
-* same correct character twice
+* same correct and wrong character twice
 * word should be coming randomly from a word bank
 
 
