@@ -12,7 +12,7 @@ def get_completion(prompt, model = "gpt-3.5-turbo"):
     response = client.chat.completions.create(model=model, messages=messages, temperature=0)
     return response.choices[0].message.content
 
-answer = get_completion("Give me a B1 Level word just write the word.").upper()
+answer = get_completion("Give me a B1 Level word which is dfferent from old ones just write the word. ").upper()
 
 question = get_completion(f"Define word '{answer}' but don't use word itself while defining and prompting. Keep it simple and short. Start defining directly not with 'This word' ")
 
@@ -22,7 +22,7 @@ question = get_completion(f"Define word '{answer}' but don't use word itself whi
 guess = "_ " * len(answer)
 print(question,"\n", guess, f"({len(answer)})")
 lives = 5
-correct_chars = []
+# correct_chars = []
 wrong_chars = []
 
 def guess_letter(answer):
@@ -46,23 +46,23 @@ def guess_letter(answer):
         if answer[i] == letter:
             contained = True
             guess = guess[:i*2] + letter + guess[i*2+1:]
-            if letter not in correct_chars: correct_chars.append(letter)
+            # if letter not in correct_chars: correct_chars.append(letter)
 
     if contained:
         return(f"***** CORRECT! *****\n {guess}")
     else:
+        wrong_chars.append(letter) 
         lives -= 1
-        if lives > 0:
-            wrong_chars.append(letter)    
+        if lives > 0:   
             return(f"----- WRONG! {lives} LIVES LEFT! -----\n {guess}")
         elif lives == 0:
-            return(f"***** You Lost! *****\n\n The word was => {answer}\n")
+            return(f"***** YOU LOST! *****\n\n The word was => {answer}\n")
     return    
 
 while lives > 0:
     if guess.replace(" ", "") != answer:
         print(question, "\n", guess_letter(answer), "FAILS: ", ', '.join(wrong_chars))  
     else:
-        print("***** You Win! *****")
+        print("***** YOU WIN! *****")
         break
         
