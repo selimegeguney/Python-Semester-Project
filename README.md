@@ -9,6 +9,7 @@ This is a word guessing game. You have 5 lives try to find out all the letters i
 * ~~Wrong character list~~
 * ~~Same correct and wrong character twice~~
 * Fetching the words from a database and maybe a tip sentence about them
+* Point system based on how many character player guessed correct and wrong
 
 
 
