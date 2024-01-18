@@ -8,7 +8,7 @@ This is a word guessing game. You have 5 lives try to find out all the letters i
 * ~~Lives doesnt go down~~
 * ~~Wrong character list~~
 * ~~Same correct and wrong character twice~~
-* Word should be coming randomly from a word bank
+* Fetching the words from a database and maybe a tip sentence about them
 
 
 
