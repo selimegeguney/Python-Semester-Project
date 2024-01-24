@@ -1,16 +1,9 @@
-# Word Guessing Game With Python
+# Word Guessing Game With Python and ChaptGPT
 
 ## Project
-This is a word guessing game. You have 5 lives try to find out all the letters int the word and guess it.
+This is a word guessing game. You have 5 lives try to find out all the letters in the word and guess it correct.
 
-## Things To Do
-* ~~Character limit to guess~~
-* ~~Lives doesnt go down~~
-* ~~Wrong character list~~
-* ~~Same correct and wrong character twice~~
-* ~~Fetching the words from an API and maybe a tip sentence about them --> Project connected to ChatGPT API~~
-* Point system based on how many character player guessed correct and wrong
-
-
-
-
+## How To Play
+### After cloning the project
+* If you have funds in ChatGPT API wallet. You can create your .env file in project folder and assign your API key to OPENAI_API_KEY variable.
+* If you dont have funds and want to try the project just close the API part and assign a question and an answer to the variables.
