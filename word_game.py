@@ -11,8 +11,11 @@ def get_completion(prompt, model = "gpt-3.5-turbo"): #GETS COMPLETION FROM OPENA
     response = client.chat.completions.create(model=model, messages=messages, temperature=1)
     return response.choices[0].message.content
 
-answer = get_completion("Give me a B1 Level word just write the word.").upper() #GETS ANSWER FROM OPENAI API
-question = get_completion(f"Define word '{answer}' but don't use word itself while defining and prompting. Keep it simple and short. Start defining directly not with 'This word' ") #GETS QUESTION FROM OPENAI API
+level = str(input("Choose a level (A1, A2, B1, B2, C1, C2): ")).upper() #GETS LEVEL INPUT FROM USER
+while level not in ["A1", "A2", "B1", "B2", "C1", "C2"]: #CHECKS IF LEVEL IS VALID
+    level = str(input("Please enter a valid level (A1, A2, B1, B2, C1, C2): ")).upper()
+answer = get_completion(f"Give me a {level} Level word just write the word.").upper() #GETS ANSWER FROM OPENAI API
+question = get_completion(f"Define word '{answer}' but definitely don't use the word itself while defining and prompting. Keep it simple and short. Start defining directly not with 'This word' ") #GETS QUESTION FROM OPENAI API
 
 # answer = "ANSWER" #UNCOMMENT HERE TO PLAY WITHOUT GPT API AND COMMENT GET COMPLETION FUNCTION AND ANSWER, QUESTION VARIABLES
 # question = "QUESTION"
