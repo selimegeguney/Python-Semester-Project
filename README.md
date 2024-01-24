@@ -1,7 +1,7 @@
 # Word Guessing Game With Python and ChaptGPT
 
 ## Project
-This is a word guessing game. You have 5 lives try to find out all the letters in the word and guess it correct.
+This is a word guessing game based on ChatGPT API. Choose skill level and you have 5 lives try to guess all the letters and find the word.
 
 ## How To Play
 ### After cloning the project
