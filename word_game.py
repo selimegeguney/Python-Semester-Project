@@ -14,13 +14,16 @@ def get_completion(prompt, model = "gpt-3.5-turbo"): #GETS COMPLETION FROM OPENA
 answer = get_completion("Give me a B1 Level word just write the word.").upper() #GETS ANSWER FROM OPENAI API
 question = get_completion(f"Define word '{answer}' but don't use word itself while defining and prompting. Keep it simple and short. Start defining directly not with 'This word' ") #GETS QUESTION FROM OPENAI API
 
+# answer = "ANSWER" #UNCOMMENT HERE TO PLAY WITHOUT GPT API AND COMMENT GET COMPLETION FUNCTION AND ANSWER, QUESTION VARIABLES
+# question = "QUESTION"
+
 player = {"lives": 5, "correct_chars": [], "wrong_chars": [], "guess": "_ " * len(answer)} #PLAYER DICTIONARY
 
 def guess_letter(answer):
     contained = False
     global player
 
-    while True: #TAKES LETTER INPUT THAT HAS NOT BEEN GUESSED BEFORE
+    while True: #TAKES LETTER INPUT THAT IS ONE CHARACTER AND HAS NOT BEEN GUESSED BEFORE
         letter = str(input("Guess a letter: ")).upper()
         if len(letter) == 1:
             if letter in player:
