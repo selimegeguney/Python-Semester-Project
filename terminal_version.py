@@ -1,6 +1,8 @@
 import os
 from dotenv import load_dotenv
 from openai import OpenAI
+import tkinter as tk
+from tkinter import messagebox
 
 load_dotenv() #LOADS .env FILE
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY") #GETS API KEY FROM .env FILE
@@ -65,3 +67,6 @@ while player["lives"] > 0: #INFINITE LOOP FOR GUESS FUNCTION UNTIL PLAYER WINS O
         print("***** YOU WIN! *****")
         break
         
+
+
+
